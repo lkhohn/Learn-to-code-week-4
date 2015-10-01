@@ -3,6 +3,27 @@
 <head>
 <title>Graham McBain's amazing Javascript!</title>
 <link id="pagestyle" rel="stylesheet" type="text/css" href="css/demo.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+///This line imports the SMINT jquery plugin
+<script	src="js/jquery.smint.js" type="text/javascript" ></script>
+///The code below sets the scroll speed for the navigation. The notes will
+///explain more about what this javascript code is doing!
+<script type="text/javascript">
+
+//Once the page is loaded(or the html"document" is "ready") the browser will
+// execute this javascript function.
+$(document).ready( function() {
+	//The "smint" plugin extendts the subMenu class and has a
+    $('.subMenu').smint({
+    	'scrollSpeed' : 1000
+    });
+});
+
+function swapStyleSheet(sheet){
+	document.getElementById('pagestyle').setAttribute('href', sheet);
+}
+</script>
+
 </head>
 
 
@@ -30,7 +51,8 @@
 	<div class="section s1">
 		<div class="inner ">
 			<h1>Lets Change the Style Sheets!</h1>
-
+				<button onclick="swapStyleSheet('css/terrible.css')">Shitty Style Sheet</button>
+				<button onclick="swapStyleSheet('css/demo.css')">Original Sheet</button>
 		</div>
 	</div>
 
